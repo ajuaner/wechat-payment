@@ -86,7 +86,7 @@ final class CombineDto extends AbstractPaymentDto
         );
     }
 
-    /** 校验合单模式、支付场景和 2-50 个子订单。 */
+    /** 校验合单模式、支付场景和 1-50 个子订单。 */
     public function validate(): void
     {
         if (! in_array($this->pay_mode, [PayMode::PAYMENT, PayMode::PARTNER], true)) {
@@ -157,9 +157,9 @@ final class CombineDto extends AbstractPaymentDto
 
         $count = count($this->sub_orders);
 
-        if ($count < 2 || $count > 50) {
+        if ($count < 1 || $count > 50) {
             throw new PaymentException(
-                'CombineDto [sub_orders] must contain 2-50 orders.'
+                'CombineDto [sub_orders] must contain 1-50 orders.'
             );
         }
 

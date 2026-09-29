@@ -146,9 +146,9 @@ final class Builder extends AbstractBuilder
         $maxOrders = $partner ? 50 : 10;
         $count = count($dto->sub_orders);
 
-        if ($count < 2 || $count > $maxOrders) {
+        if ($count < 1 || $count > $maxOrders) {
             throw new PaymentException(
-                "Combined payment [sub_orders] must contain 2-{$maxOrders} orders."
+                "Combined payment [sub_orders] must contain 1-{$maxOrders} orders."
             );
         }
 
