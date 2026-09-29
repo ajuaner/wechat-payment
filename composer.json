@@ -1,0 +1,25 @@
+{
+    "name": "qinii/wechat-payment",
+    "description": "基于EasyWeChat 6的支付模块",
+    "type": "library",
+    "license": "MulanPSL-2.0",
+    "require": {
+        "php": "^8.0",
+        "nyholm/psr7": "^1.5",
+        "psr/http-message": "^1.0|^2.0",
+        "w7corp/easywechat": "^6.19.1",
+        "qinii/wechat-core": "^0.1.0",
+        "symfony/http-client-contracts": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qinii\\WechatPayment\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/run.php"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
